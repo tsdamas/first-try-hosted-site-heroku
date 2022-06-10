@@ -1,0 +1,6 @@
+List of commands:
+mkdir rap-names-api
+cd rap-names-api/
+npm init
+npm install express --save
+touch server.js
