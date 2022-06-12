@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express () // whenever we see app is relating to express
+const cors = require('cors')
 const PORT = 8000
+
+app.use(cors())
 
 //create an object to send through the api request
 const rappers = {
@@ -48,7 +51,10 @@ app.get('/api/:rapperName', (request, response) => {
 })
 
 // make the server to listen to the request
-app.listen(PORT, () => {
+//process.env.PORT is going to 
+//since we are requesting it locally heroku is not going to work, so our servers is not set up to handle local file, because we did not learn about cors yet.
+// install to handle cors errors. Run this command line to install a package that will handle this (npm install cors --save)
+app.listen(process.env.PORT || PORT, () => {
   console.log(`The server is running on ${PORT}! You better catch it!`)
 })
 
