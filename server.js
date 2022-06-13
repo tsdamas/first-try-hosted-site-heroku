@@ -54,6 +54,7 @@ app.get('/api/:rapperName', (request, response) => {
 //process.env.PORT is going to 
 //since we are requesting it locally heroku is not going to work, so our servers is not set up to handle local file, because we did not learn about cors yet.
 // install to handle cors errors. Run this command line to install a package that will handle this (npm install cors --save)
+// process.env.PORT means try to use whatever heroku set up to as a port
 app.listen(process.env.PORT || PORT, () => {
   console.log(`The server is running on ${PORT}! You better catch it!`)
 })
